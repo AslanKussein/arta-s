@@ -4,7 +4,7 @@
 
 
 #sidebar {
-    width: 200px;
+    width: 220px;
     /* position: fixed;
      top: 0;
      left: 0;*/
@@ -12,6 +12,7 @@
     z-index: 999;
     /*background: #7386D5;
     color: #fff;*/
+    border:1px solid silver;
     transition: all 0.3s;
 }
 
@@ -92,15 +93,34 @@ ul.CTAs a {
     CONTENT STYLE
  ----------------------------------------------------- */
 #content {
-    width: calc(100% - 213px);
+    width: calc(100% - 183px);
     padding: 40px;
     min-height: 100vh;
     transition: all 0.3s;
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 0;
 }
 
 #content.active {
     width: 100%;
 }
+.list-unstyled li{
+    padding: 0 5px ;
+}
+
+.list-unstyled li a{
+    font-size: 14px!important;
+    color: #000000;
+}
+
+ .list-unstyled li.active a{
+    background: transparent!important;
+    color: #23b7e5!important;
+}
+.list-unstyled li a span {
+    margin-left: 10px;
+}
+ .card-title {
+     padding: 20px 0 0 20px;
+ }
