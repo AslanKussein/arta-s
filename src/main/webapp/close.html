@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Завершение наряда</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="card">
+        <div class="card-header">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label>Завершение наряда №</label>
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Номер заказа OSM</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Номер заказа DOR</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Номер заказа SUIST</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Вернуть диспетчеру (отказ)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Исполнено</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label class="text-danger">Поручение не может быть выполнено</label>
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <label>Причина не выполнения</label>
+                                    <textarea type="text" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md">
+                                    <label class="text-danger">Комментарий</label>
+                                    <textarea type="text" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                            <button type="button" class="btn btn-primary">Отмена</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-bordered text-center table-sm">
+                                <thead class="bg-info text-white text-center">
+                                <tr>
+                                    <th>ID позиции</th>
+                                    <th>Продукт</th>
+                                    <th>Дата/Время установки</th>
+                                    <th>Отказ</th>
+                                    <th>Приченание исполнителя</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>ORDER_TYPE_ID</td>
+                                    <td>RESOURCE_SPEC_ID</td>
+                                    <td>IS_CLIENT_EQUIPMENT</td>
+                                    <td>IS_CLIENT_EQUIPMENT</td>
+                                    <td>IS_CLIENT_EQUIPMENT</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-info text-center">Идентификатор позициикликабелен, при нажатии открывается
+                                окно с
+                                оборудовнием данной позиции</p>
+
+                            <table class="table table-bordered text-center table-sm">
+                                <thead class="bg-info text-white text-center">
+                                <tr>
+                                    <th>Порядковый номер</th>
+                                    <th>тип действия</th>
+                                    <th>Тип оборудования</th>
+                                    <th>Признак оборудования клиента</th>
+                                    <th>Серийный номер</th>
+                                    <th>Примечания к оборудованию</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>ORDER_TYPE_ID</td>
+                                    <td>RESOURCE_SPEC_ID</td>
+                                    <td>IS_CLIENT_EQUIPMENT</td>
+                                    <td>IS_CLIENT_EQUIPMENT</td>
+                                    <td>IS_CLIENT_EQUIPMENT</td>
+                                    <td>IS_CLIENT_EQUIPMENT</td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Исползованные материалы</label>
+                                    <input type="text" class="form-control">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Добавить
+                                        материал
+                                    </button>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Список исползованных материалов</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="defaultIndeterminate2" checked>
+                                <label class="custom-control-label text-danger text-left" for="defaultIndeterminate2">Выполнено
+                                    с заменой ЛД</label>
+                            </div>
+                            <p class="text-danger">Комментарий для ТУ</p>
+
+                            <div class="form-row">
+                                <div class="form-group col-md">
+                                    <label>Объязательно для заполнения</label>
+                                    <textarea type="text" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                            <button type="button" class="btn btn-primary">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
