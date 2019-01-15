@@ -6,370 +6,549 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <style>
         .modal-lg {
             max-width: 80%;
         }
+
+
+
+
+        #sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 999;
+            background: #7386D5;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #sidebar.active {
+            margin-left: -250px;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #6d7fcc;
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+
+        #sidebar ul p {
+            color: #fff;
+            padding: 10px;
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: #fff;
+        }
+
+        #sidebar ul li.active > a, a[aria-expanded="true"] {
+            color: #fff;
+            background: #6d7fcc;
+        }
+
+
+        a[data-toggle="collapse"] {
+            position: relative;
+        }
+
+        a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+            content: '\e259';
+            display: block;
+            position: absolute;
+            right: 20px;
+            font-family: 'Glyphicons Halflings';
+            font-size: 0.6em;
+        }
+
+        a[aria-expanded="true"]::before {
+            content: '\e260';
+        }
+
+
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background: #6d7fcc;
+        }
+
+        ul.CTAs {
+            padding: 20px;
+        }
+
+        ul.CTAs a {
+            text-align: center;
+            font-size: 0.9em !important;
+            display: block;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+
+
+
+        /* ---------------------------------------------------
+            CONTENT STYLE
+         ----------------------------------------------------- */
+        #content {
+            width: calc(100% - 250px);
+            padding: 40px;
+            min-height: 100vh;
+            transition: all 0.3s;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #content.active {
+            width: 100%;
+        }
+
+
+
     </style>
+
+
 </head>
 <body>
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Казактелеком</a>
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Header as you want </h3></h3>
+        </div>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
+        <ul class="list-unstyled components">
+            <p>Dummy Heading</p>
+            <li class="active">
+                <a href="#menu">Animación</a>
 
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+            <li>
+                <a href="#menu">Ilustración</a>
+
+
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+            <li>
+                <a href="#">Interacción</a>
+            </li>
+            <li>
+                <a href="#">Blog</a>
+            </li>
+            <li>
+                <a href="#">Acerca</a>
+            </li>
+            <li>
+                <a href="#">contacto</a>
             </li>
 
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+
+        </ul>
+    </nav>
+
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-dark info-color">
+
+
+            <img src="img/ktk-biglogo.png" style="width: 190px; height: 45px" alt="App Logo" class="img-responsive">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+
+
+
+
+
+                <div class="navbar-header">
+                    <a href="#" title="Боковая панель" id="sidebarCollapse" class="hidden-xs">
+                        <i class="fa fa-navicon"></i>
+                    </a>
                 </div>
-            </li>
 
-        </ul>
-        <!-- Links -->
 
-        <form class="form-inline">
-            <div class="md-form my-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <!-- Links -->
+
+                <form class="form-inline">
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-    <!-- Collapsible content -->
+            <!-- Collapsible content -->
 
-</nav>
-<!--/.Navbar-->
 
-<div class="card">
-    <div class="card-title">Карточка наряда № </div>
-    <div class="card-body">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Детально</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Позиция заказа</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Разовые</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="detail-tab" data-toggle="tab" href="#detail" role="tab" aria-controls="detail" aria-selected="false">Оборудование</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="accordion" id="accordionExample">
-                        <div class="card z-depth-0 bordered">
-                            <div class="card-header" id="headingOne">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link text-center" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                            aria-expanded="true" aria-controls="collapseOne">
-                                        Данные
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <label>Филиал</label>
-                                            <input type="text" class="form-control" placeholder="Филиал">
+        </nav>
+
+        <div class="card">
+            <div class="card-title">Карточка наряда №</div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                           aria-controls="home"
+                           aria-selected="true">Детально</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                           aria-controls="profile" aria-selected="false">Позиция заказа</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                           aria-controls="contact" aria-selected="false">Разовые</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="detail-tab" data-toggle="tab" href="#detail" role="tab"
+                           aria-controls="detail"
+                           aria-selected="false">Оборудование</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link text-center" type="button" data-toggle="collapse"
+                                                data-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                            Данные
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <label>Филиал</label>
+                                                <input type="text" class="form-control" placeholder="Филиал">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Рабочее место/подраздиление</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Рабочее место/подраздиление">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Населенный пункт</label>
+                                                <input type="text" class="form-control" placeholder="Населенный пункт">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Контактный телефон</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="1Контактный телефон">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Рабочее место/подраздиление</label>
-                                            <input type="text" class="form-control" placeholder="Рабочее место/подраздиление">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <label>Дата инсталяции</label>
+                                                <input type="text" class="form-control" placeholder="Дата инсталяции">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Время инсталяции</label>
+                                                <input type="text" class="form-control" placeholder="Время инсталяции">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Наименование клиента</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Наименование клиента">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Наименование платедщика</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Наименование платедщика">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Населенный пункт</label>
-                                            <input type="text" class="form-control" placeholder="Населенный пункт">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <label>Вид заказа</label>
+                                                <input type="text" class="form-control" placeholder="Филиал">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Дилер-продаевц</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Рабочее место/подраздиление">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Населенный пункт</label>
+                                                <input type="text" class="form-control" placeholder="Населенный пункт">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Дилер инсталятор</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="1Контактный телефон">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Контактный телефон</label>
-                                            <input type="text" class="form-control" placeholder="1Контактный телефон">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label>Коментарий (CRM)</label>
+                                                <textarea type="text" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Коментарий (ТУ)</label>
+                                                <textarea type="text" class="form-control"></textarea>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <label>Дата инсталяции</label>
-                                            <input type="text" class="form-control" placeholder="Дата инсталяции">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Время инсталяции</label>
-                                            <input type="text" class="form-control" placeholder="Время инсталяции">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Наименование клиента</label>
-                                            <input type="text" class="form-control" placeholder="Наименование клиента">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Наименование платедщика</label>
-                                            <input type="text" class="form-control" placeholder="Наименование платедщика">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <label>Вид заказа</label>
-                                            <input type="text" class="form-control" placeholder="Филиал">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Дилер-продаевц</label>
-                                            <input type="text" class="form-control" placeholder="Рабочее место/подраздиление">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Населенный пункт</label>
-                                            <input type="text" class="form-control" placeholder="Населенный пункт">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Дилер инсталятор</label>
-                                            <input type="text" class="form-control" placeholder="1Контактный телефон">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label>Коментарий (CRM)</label>
-                                            <textarea type="text" class="form-control"></textarea>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Коментарий (ТУ)</label>
-                                            <textarea type="text" class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label>Исполнитель</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Назначен исполнитель</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label>татус исполниеля</label>
-                                            <input type="text" class="form-control">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label>Исполнитель</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Назначен исполнитель</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>татус исполниеля</label>
+                                                <input type="text" class="form-control">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card z-depth-0 bordered">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed text-center" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                        Старые данные
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label>Адрес точки подключения</label>
-                                            <input type="text" class="form-control">
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed text-center" type="button"
+                                                data-toggle="collapse"
+                                                data-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                            Старые данные
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label>Адрес точки подключения</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Базовая спецификация ресурса</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Номер базового ресурса</label>
+                                                <input type="text" class="form-control">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Базовая спецификация ресурса</label>
-                                            <input type="text" class="form-control">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label>Лицевой счет</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Продуктовое предложение</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Узел филиала</label>
+                                                <input type="text" class="form-control">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Номер базового ресурса</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label>Лицевой счет</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Продуктовое предложение</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Узел филиала</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-9">
-                                            <label>Линейные данные</label>
-                                            <textarea type="text" class="form-control"></textarea>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Серийный номер базового ресурса</label>
-                                            <input type="text" class="form-control">
+                                        <div class="form-row">
+                                            <div class="form-group col-md">
+                                                <label>Линейные данные</label>
+                                                <textarea type="text" class="form-control"></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card z-depth-0 bordered">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed text-center" type="button" data-toggle="collapse" data-target="#collapseThree"
-                                            aria-expanded="false" aria-controls="collapseThree">
-                                         Новые данные
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label>Адрес точки подключения</label>
-                                            <input type="text" class="form-control">
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed text-center" type="button"
+                                                data-toggle="collapse"
+                                                data-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                            Новые данные
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label>Адрес точки подключения</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Базовая спецификация ресурса</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Номер базового ресурса</label>
+                                                <input type="text" class="form-control">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Базовая спецификация ресурса</label>
-                                            <input type="text" class="form-control">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label>Лицевой счет</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Продуктовое предложение</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Узел филиала</label>
+                                                <input type="text" class="form-control">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Номер базового ресурса</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label>Лицевой счет</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Продуктовое предложение</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Узел филиала</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-9">
-                                            <label>Линейные данные</label>
-                                            <textarea type="text" class="form-control"></textarea>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Серийный номер базового ресурса</label>
-                                            <input type="text" class="form-control">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-9">
+                                                <label>Линейные данные</label>
+                                                <textarea type="text" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Серийный номер базового ресурса</label>
+                                                <input type="text" class="form-control">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <table class="table table-bordered text-center table-sm">
-                    <thead class="bg-info text-white text-center">
-                    <tr>
-                        <th>ID позиции</th>
-                        <th>Тип действия</th>
-                        <th>Продукт</th>
-                        <th>Спецификация ресурса</th>
-                        <th>Номер с</th>
-                        <th>Номер Н</th>
-                        <th>Предложение с</th>
-                        <th>Предложение Н</th>
-                        <th>Кодовое слово</th>
-                    </tr>
-                    </thead>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <table class="table table-bordered text-center table-sm">
+                            <thead class="bg-info text-white text-center">
+                            <tr>
+                                <th>ID позиции</th>
+                                <th>Тип действия</th>
+                                <th>Продукт</th>
+                                <th>Спецификация ресурса</th>
+                                <th>Номер с</th>
+                                <th>Номер Н</th>
+                                <th>Предложение с</th>
+                                <th>Предложение Н</th>
+                                <th>Кодовое слово</th>
+                            </tr>
+                            </thead>
 
-                    <tbody>
-                    <tr >
-                        <td><a class="text-default" data-toggle="modal" data-target="#basicExampleModal">ID_EQUIPMENT</a></td>
-                        <td>ORDER_TYPE_ID</td>
-                        <td>RESOURCE_SPEC_ID</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                    </tr>
-                    </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a class="text-default" data-toggle="modal"
+                                       data-target="#basicExampleModal">ID_EQUIPMENT</a></td>
+                                <td>ORDER_TYPE_ID</td>
+                                <td>RESOURCE_SPEC_ID</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                            </tr>
+                            </tbody>
 
-                </table>
-                <p class="text-info text-center">Идентификатор позициикликабелен, при нажатии открывается окно с оборудовнием данной позиции</p>
+                        </table>
+                        <p class="text-info text-center">Идентификатор позициикликабелен, при нажатии открывается окно с
+                            оборудовнием данной позиции</p>
 
-            </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <table class="table table-bordered text-center table-sm">
-                    <thead class="bg-info text-white text-center">
-                    <tr>
-                        <th>Порядковый номер</th>
-                        <th>Наименование</th>
-                        <th>Количество</th>
-                        <th>Единица измерения</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr >
-                        <td>ID_EQUIPMENT</td>
-                        <td>ORDER_TYPE_ID</td>
-                        <td>RESOURCE_SPEC_ID</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                    </tr>
-                    </tbody>
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <table class="table table-bordered text-center table-sm">
+                            <thead class="bg-info text-white text-center">
+                            <tr>
+                                <th>Порядковый номер</th>
+                                <th>Наименование</th>
+                                <th>Количество</th>
+                                <th>Единица измерения</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>ID_EQUIPMENT</td>
+                                <td>ORDER_TYPE_ID</td>
+                                <td>RESOURCE_SPEC_ID</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                            </tr>
+                            </tbody>
 
-                </table>
-            </div>
+                        </table>
+                    </div>
 
-            <div class="tab-pane fade" id="detail" role="tabpanel" aria-labelledby="contact-tab">
-                <table class="table table-bordered text-center table-sm">
-                    <thead class="bg-info text-white text-center">
-                    <tr>
-                        <th>Порядковый номер</th>
-                        <th>Наименование</th>
-                        <th>Количество</th>
-                        <th>Единица измерения</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr >
-                        <td>ID_EQUIPMENT</td>
-                        <td>ORDER_TYPE_ID</td>
-                        <td>RESOURCE_SPEC_ID</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                    </tr>
-                    </tbody>
+                    <div class="tab-pane fade" id="detail" role="tabpanel" aria-labelledby="contact-tab">
+                        <table class="table table-bordered text-center table-sm">
+                            <thead class="bg-info text-white text-center">
+                            <tr>
+                                <th>Порядковый номер</th>
+                                <th>Наименование</th>
+                                <th>Количество</th>
+                                <th>Единица измерения</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>ID_EQUIPMENT</td>
+                                <td>ORDER_TYPE_ID</td>
+                                <td>RESOURCE_SPEC_ID</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                            </tr>
+                            </tbody>
 
-                </table>
-                <p class="text-info text-center">Вкладка содержит перечень всего оборудования из массива EQUIPMENT_ACTION</p>
+                        </table>
+                        <p class="text-info text-center">Вкладка содержит перечень всего оборудования из массива
+                            EQUIPMENT_ACTION</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
-<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content modal-lg">
             <div class="modal-header">
@@ -385,14 +564,14 @@
                         <th>Порядковый номер</th>
                         <th>Тип действия</th>
                         <th>Тип оборудование</th>
-                        <th>Признак оборудования</th>
+                        <th>Клиентское оборудование</th>
                         <th>Серийный номер</th>
                         <th>Примечание к оборудованию</th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    <tr >
+                    <tr>
                         <td>ID_EQUIPMENT</td>
                         <td>ORDER_TYPE_ID</td>
                         <td>RESOURCE_SPEC_ID</td>
@@ -409,7 +588,23 @@
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
 <script src="js/bootstrap.min.js"></script>
 <script src="js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>
 </body>
 </html>
