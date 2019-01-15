@@ -115,7 +115,25 @@
     <div id="content">
 
         <div class="card">
-            <div class="card-title">Карточка наряда №</div>
+            <div class="card-header">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label>Карточка наряда №</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Номер заказа OSM</label>
+                        <input type="text" class="form-control" value="OSM - EDF15235">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Номер заказа DOR</label>
+                        <input type="text" class="form-control" value="DOR - DOR-000243525">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Номер заказа SUIST</label>
+                        <input type="text" class="form-control" value="SUIST - DIR-000012345">
+                    </div>
+                </div>
+            </div>
             <div class="card-body">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
@@ -135,6 +153,11 @@
                         <a class="nav-link" id="detail-tab" data-toggle="tab" href="#detail" role="tab"
                            aria-controls="detail"
                            aria-selected="false">Оборудование</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="mat-tab" data-toggle="tab" href="#mat-tab" role="tab"
+                           aria-controls="mat-tab"
+                           aria-selected="false">Материалы</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -411,9 +434,11 @@
                             <thead class="bg-info text-white text-center">
                             <tr>
                                 <th>Порядковый номер</th>
-                                <th>Наименование</th>
-                                <th>Количество</th>
-                                <th>Единица измерения</th>
+                                <th>Тип действия</th>
+                                <th>Тип оборудования</th>
+                                <th>Тип оборудования клиента</th>
+                                <th>Серийный номер</th>
+                                <th>Причесание к оборудованию</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -421,6 +446,8 @@
                                 <td>ID_EQUIPMENT</td>
                                 <td>ORDER_TYPE_ID</td>
                                 <td>RESOURCE_SPEC_ID</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>IS_CLIENT_EQUIPMENT</td>
                                 <td>IS_CLIENT_EQUIPMENT</td>
                             </tr>
                             </tbody>
