@@ -94,11 +94,11 @@ ul.CTAs a {
  ----------------------------------------------------- */
 #content {
     width: calc(100% - 183px);
-    padding: 40px;
+    padding: 0 40px 40px 40px;
     min-height: 100vh;
     transition: all 0.3s;
     position: absolute;
-    top: 20px;
+    top: 60px;
     right: 0;
 }
 
@@ -124,3 +124,12 @@ ul.CTAs a {
  .card-title {
      padding: 20px 0 0 20px;
  }
+ 
+ .my-nav a i {
+     color: #fff;
+ }
+
+
+.my-nav>a{
+    padding: 0 10px;
+}
