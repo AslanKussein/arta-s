@@ -11,6 +11,19 @@
     <packaging>war</packaging>
 
     <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://178.89.107.30:80/manager/text</url>
+                    <server>TomcatServer</server>
+                    <path>/arta</path>
+                </configuration>
+            </plugin>
+        </plugins>
         <finalName>arta</finalName>
     </build>
 
