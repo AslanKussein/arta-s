@@ -198,11 +198,11 @@
 
                                     <tbody>
                                     <tr>
-                                        <td>ORDER_TYPE_ID</td>
-                                        <td>RESOURCE_SPEC_ID</td>
-                                        <td>IS_CLIENT_EQUIPMENT</td>
-                                        <td>IS_CLIENT_EQUIPMENT</td>
-                                        <td>IS_CLIENT_EQUIPMENT</td>
+                                        <td>ID_ORDER</td>
+                                        <td>PRODUCT_ID</td>
+                                        <td>ACTUAL_INSTALL_DATE</td>
+                                        <td>REJECT_REASON_ID</td>
+                                        <td>REJECT_REASON_COMMENT</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -223,12 +223,12 @@
                                     </thead>
                                     <tbody>
                                     <tr>
+                                        <td>ID_EQUIPMENT</td>
                                         <td>ORDER_TYPE_ID</td>
                                         <td>RESOURCE_SPEC_ID</td>
                                         <td>IS_CLIENT_EQUIPMENT</td>
-                                        <td>IS_CLIENT_EQUIPMENT</td>
-                                        <td>IS_CLIENT_EQUIPMENT</td>
-                                        <td>IS_CLIENT_EQUIPMENT</td>
+                                        <td>SERIAL_NUMBER</td>
+                                        <td>NOTES</td>
                                     </tr>
                                     </tbody>
 
@@ -238,7 +238,9 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>Исползованные материалы</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="MATERIAL_ID">
+                                        <br>
+                                        <input type="text" class="form-control" value="MATERIAL_COUNT">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Добавить
                                             материал
                                         </button>
