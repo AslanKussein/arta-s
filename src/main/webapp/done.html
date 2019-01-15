@@ -122,19 +122,19 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label>Номер заказа OSM</label>
-                        <input type="text" class="form-control" value="OSM - EDF15235">
+                        <input type="text" class="form-control" value="OSM_ORDER_ID">
                     </div>
                     <div class="form-group col-md-3">
                         <label>Номер заказа DOR</label>
-                        <input type="text" class="form-control" value="DOR - DOR-000243525">
+                        <input type="text" class="form-control" value="DOR">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Номер заказа SUIST</label>
-                        <input type="text" class="form-control" value="SUIST - DIR-000012345">
+                        <input type="text" class="form-control" value="ID_SUIST">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Дата создания DIR</label>
-                        <input type="date" class="form-control" value="new Date()">
+                        <input type="text" class="form-control" value="DIR_CREATION_DATE">
                     </div>
                 </div>
             </div>
@@ -183,71 +183,70 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-3">
                                                 <label>Филиал</label>
-                                                <input type="text" class="form-control" placeholder="Филиал">
+                                                <input type="text" class="form-control" value="FILIAL_ID">
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Рабочее место/подраздиление</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="Рабочее место/подраздиление">
+                                                <input type="text" class="form-control" value="Z_ROLE_60401_DEPARTMENT_ID">
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Населенный пункт</label>
-                                                <input type="text" class="form-control" placeholder="Населенный пункт">
+                                                <input type="text" class="form-control" value="TOWN_STATE_ID">
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Контактный телефон</label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="1Контактный телефон">
+                                                       value="ORDER_CONTACT_PHONE">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-3">
                                                 <label>Дата инсталяции</label>
-                                                <input type="text" class="form-control" placeholder="Дата инсталяции">
+                                                <input type="text" class="form-control" value="INSTALLATION_DATE">
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Время инсталяции</label>
-                                                <input type="text" class="form-control" placeholder="Время инсталяции">
+                                                <input type="text" class="form-control" value="INSTALLATION_TIME_PERIOD">
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Наименование клиента</label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="Наименование клиента">
+                                                       value="CUSTOMER_NAME">
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Наименование платедщика</label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="Наименование платедщика">
+                                                       value="PAY_CUSTOMER_NAME">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-3">
                                                 <label>Вид заказа</label>
-                                                <input type="text" class="form-control" placeholder="Филиал">
+                                                <input type="text" class="form-control" value="ORDER_TYPE_ID">
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label>Дилер-продаевц</label>
+                                                <label>Дилер-продавец</label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="Рабочее место/подраздиление">
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label>Населенный пункт</label>
-                                                <input type="text" class="form-control" placeholder="Населенный пункт">
+                                                       value="SALE_DEALER_ID">
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Дилер инсталятор</label>
+                                                <input type="text" class="form-control" value="INSTAL_DEALER_ID">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>Сегмент ЛС</label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="1Контактный телефон">
+                                                       value="MS_SEGMENT_ID">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label>Коментарий (CRM)</label>
-                                                <textarea type="text" class="form-control"></textarea>
+                                                <textarea type="text" class="form-control">CRM_COMENT</textarea>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Коментарий (ТУ)</label>
-                                                <textarea type="text" class="form-control"></textarea>
+                                                <textarea type="text" class="form-control">INVENTORY_COMENT</textarea>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -284,35 +283,35 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <label>Адрес точки подключения</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="OLD_ADDRESS_NAME">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Базовая спецификация ресурса</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="OLD_BASE_RESOURCE_SPEC_ID">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Номер базового ресурса</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="OLD_BASE_RESOURCE_NUMBER">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <label>Лицевой счет</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="OLD_CUSTOMER_ACCOUNT_ID">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Продуктовое предложение</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="OLD_PRODUCT_OFFER_ID">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Узел филиала</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="OLD_FILIAL_NODE_ID">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md">
                                                 <label>Линейные данные</label>
-                                                <textarea type="text" class="form-control"></textarea>
+                                                <textarea type="text" class="form-control">OLD_LINEAR_DATA</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -335,39 +334,35 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <label>Адрес точки подключения</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="NEW_ADDRESS_NAME">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Базовая спецификация ресурса</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="NEW_BASE_RESOURCE_SPEC_ID">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Номер базового ресурса</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="NEW_BASE_RESOURCE_NUMBER">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <label>Лицевой счет</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="NEW_CUSTOMER_ACCOUNT_ID">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Продуктовое предложение</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="NEW_PRODUCT_OFFER_ID">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Узел филиала</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" value="NEW_FILIAL_NODE_ID">
                                             </div>
                                         </div>
                                         <div class="form-row">
-                                            <div class="form-group col-md-9">
+                                            <div class="form-group col-md">
                                                 <label>Линейные данные</label>
-                                                <textarea type="text" class="form-control"></textarea>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <label>Серийный номер базового ресурса</label>
-                                                <input type="text" class="form-control">
+                                                <textarea type="text" class="form-control">NEW_LINEAR_DATA</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -388,21 +383,25 @@
                                 <th>Предложение с</th>
                                 <th>Предложение Н</th>
                                 <th>Кодовое слово</th>
+                                <th>Кол. С</th>
+                                <th>Кол. Н</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <tr>
                                 <td><a class="text-default" data-toggle="modal"
-                                       data-target="#basicExampleModal">ID_EQUIPMENT</a></td>
+                                       data-target="#basicExampleModal">ID_ORDER</a></td>
                                 <td>ORDER_TYPE_ID</td>
+                                <td>PRODUCT_ID</td>
                                 <td>RESOURCE_SPEC_ID</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>OLD_PRODUCT_NUM</td>
+                                <td>NEW_PRODUCT_NUM</td>
+                                <td>OLD_PRODUCT_OFFER_STRUCT_ID</td>
+                                <td>NEW_PRODUCT_OFFER_STRUCT_ID</td>
+                                <td>CODEWORD</td>
+                                <td>OLD_SERVICE_COUNT</td>
+                                <td>NEW_SERVICE_COUNT</td>
                             </tr>
                             </tbody>
 
@@ -423,10 +422,10 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>ID_EQUIPMENT</td>
-                                <td>ORDER_TYPE_ID</td>
-                                <td>RESOURCE_SPEC_ID</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>ID_ELEMENT</td>
+                                <td>PO_ELEMENT_ID</td>
+                                <td>SERVICE_COUNT</td>
+                                <td>UNIT_ID</td>
                             </tr>
                             </tbody>
 
@@ -451,8 +450,8 @@
                                 <td>ORDER_TYPE_ID</td>
                                 <td>RESOURCE_SPEC_ID</td>
                                 <td>IS_CLIENT_EQUIPMENT</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
-                                <td>IS_CLIENT_EQUIPMENT</td>
+                                <td>SERIAL_NUMBER</td>
+                                <td>NOTES</td>
                             </tr>
                             </tbody>
 
@@ -495,8 +494,8 @@
                         <td>ORDER_TYPE_ID</td>
                         <td>RESOURCE_SPEC_ID</td>
                         <td>IS_CLIENT_EQUIPMENT</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
-                        <td>IS_CLIENT_EQUIPMENT</td>
+                        <td>SERIAL_NUMBER</td>
+                        <td>NOTES</td>
                     </tr>
                     </tbody>
 
