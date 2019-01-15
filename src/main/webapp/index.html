@@ -7,224 +7,107 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <style>
-        .modal-lg {
-            max-width: 80%;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-
-
-
-        #sidebar {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            z-index: 999;
-            background: #7386D5;
-            color: #fff;
-            transition: all 0.3s;
-        }
-
-        #sidebar.active {
-            margin-left: -250px;
-        }
-
-        #sidebar .sidebar-header {
-            padding: 20px;
-            background: #6d7fcc;
-        }
-
-        #sidebar ul.components {
-            padding: 20px 0;
-            border-bottom: 1px solid #47748b;
-        }
-
-        #sidebar ul p {
-            color: #fff;
-            padding: 10px;
-        }
-
-        #sidebar ul li a {
-            padding: 10px;
-            font-size: 1.1em;
-            display: block;
-        }
-
-        #sidebar ul li a:hover {
-            color: #7386D5;
-            background: #fff;
-        }
-
-        #sidebar ul li.active > a, a[aria-expanded="true"] {
-            color: #fff;
-            background: #6d7fcc;
-        }
-
-
-        a[data-toggle="collapse"] {
-            position: relative;
-        }
-
-        a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
-            content: '\e259';
-            display: block;
-            position: absolute;
-            right: 20px;
-            font-family: 'Glyphicons Halflings';
-            font-size: 0.6em;
-        }
-
-        a[aria-expanded="true"]::before {
-            content: '\e260';
-        }
-
-
-        ul ul a {
-            font-size: 0.9em !important;
-            padding-left: 30px !important;
-            background: #6d7fcc;
-        }
-
-        ul.CTAs {
-            padding: 20px;
-        }
-
-        ul.CTAs a {
-            text-align: center;
-            font-size: 0.9em !important;
-            display: block;
-            border-radius: 5px;
-            margin-bottom: 5px;
-        }
-
-
-
-
-        /* ---------------------------------------------------
-            CONTENT STYLE
-         ----------------------------------------------------- */
-        #content {
-            width: calc(100% - 250px);
-            padding: 40px;
-            min-height: 100vh;
-            transition: all 0.3s;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        #content.active {
-            width: 100%;
-        }
-
-
-
-    </style>
 
 
 </head>
 <body>
+<nav class="navbar topnavbar navbar-dark info-color">
+
+
+    <img src="img/ktk-biglogo.png" style="width: 190px; margin-top: 5px; " alt="App Logo" class="img-responsive">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+
+        <div class="navbar-header">
+            <a href="#" title="Боковая панель" id="sidebarCollapse" class="hidden-xs">
+                <i class="fa fa-navicon"></i>
+            </a>
+        </div>
+
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+        </ul>
+        <!-- Links -->
+
+        <form class="form-inline">
+            <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+        </form>
+    </div>
+    <!-- Collapsible content -->
+
+
+</nav>
 
 
 <div class="wrapper">
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Header as you want </h3></h3>
-        </div>
+    <div class="aside-inner">
+        <nav id="sidebar" class="sidebar">
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="active">
+                    <a href="#menu">Animación</a>
 
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#menu">Animación</a>
-
-            </li>
-            <li>
-                <a href="#menu">Ilustración</a>
+                </li>
+                <li>
+                    <a href="#menu">Ilustración</a>
 
 
-            </li>
-            <li>
-                <a href="#">Interacción</a>
-            </li>
-            <li>
-                <a href="#">Blog</a>
-            </li>
-            <li>
-                <a href="#">Acerca</a>
-            </li>
-            <li>
-                <a href="#">contacto</a>
-            </li>
+                </li>
+                <li>
+                    <a href="#">Interacción</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Acerca</a>
+                </li>
+                <li>
+                    <a href="#">contacto</a>
+                </li>
 
 
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </div>
+
 
     <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-dark info-color">
-
-
-            <img src="img/ktk-biglogo.png" style="width: 190px; height: 45px" alt="App Logo" class="img-responsive">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="basicExampleNav">
-
-
-
-
-
-                <div class="navbar-header">
-                    <a href="#" title="Боковая панель" id="sidebarCollapse" class="hidden-xs">
-                        <i class="fa fa-navicon"></i>
-                    </a>
-                </div>
-
-
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                           aria-haspopup="true"
-                           aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-
-                </ul>
-                <!-- Links -->
-
-                <form class="form-inline">
-                    <div class="md-form my-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    </div>
-                </form>
-            </div>
-            <!-- Collapsible content -->
-
-
-        </nav>
 
         <div class="card">
             <div class="card-title">Карточка наряда №</div>
