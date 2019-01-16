@@ -1,0 +1,20 @@
+image: maratkalibek/aptly
+
+variables:
+  CAT_USER: 'admin'
+  CAT_PASSWORD: 's3cret'
+  CAT_URL: '185.146.3.62'
+
+stages:
+  - compile
+  - package
+  - install
+
+compile:
+  stage: compile
+  script:
+    - mvn compile -U
+run:
+  stage: install
+  script:
+    - mvn clean package install -U
