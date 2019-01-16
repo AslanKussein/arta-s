@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>arta</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<nav class="navbar  navbar-expand-l navbar-dark info-color">
+    <div style=" margin-top: 5px;" class="my-nav">
+        <img src="img/ktk-biglogo.png" style="width: 190px; float: left " alt="App Logo" class="img-responsive">
+
+        <button class="navbar-toggler" style="margin-left: 20px;margin-right: 5px" type="button">
+            <span class="navbar-toggler-icon" style="font-size: 14px; font-weight: bold"></span>
+        </button>
+
+        <a href=""><i class="far fa-user"></i></a>
+        <a href=""><i class="fa fa-lock"></i></a>
+        <a href=""><i class="fas fa-question-circle"></i></a>
+    </div>
+</nav>
+
+<nav id="sidebar" class="sidebar">
+    <p style="padding: 10px 0 0 10px; margin-bottom: 0px;font-size: 14px">Главное меню</p>
+    <ul class="list-unstyled components">
+        <li class="active">
+            <a href="#menu"><i class="fa fa-layer-group"></i><span>Диспетчер</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fas fa-tachometer"></i> <span>Статистика</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fa fa-user"></i><span>Сотрудники</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fa fa-layer-group"></i><span>Архив</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fa fa-wrench"></i><span>Настройки</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fa fa-info"></i><span>Справочники</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fa fa-info"></i><span>Логи</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fa fa-info"></i><span>Отчеты</span></a>
+        </li>
+        <li>
+            <a href="#menu"><i class="fa fa-location-arrow"></i><span>Геолокация</span></a>
+        </li>
+
+    </ul>
+</nav>
+
+<div class="wrapper">
+
+
+    <div id="content">
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Наряды</h3><br>
+                <h6>Наряды на сегодня</h6>
+            </div>
+            <div class="card-body">
+                <button ng-hide="archiveMode" ng-click="todayFilter()" style="color: #484848"
+                        class="mb-sm btn btn-labeled btn-success ng-binding">
+                     <span class="btn-label"><i class="fa fa-calendar"></i>
+                     </span>Наряды за сегодня
+                </button>
+                <button ng-hide="archiveMode" ng-click="vipFilter()" style="color: #484848 !important"
+                        class="mb-sm btn bg-danger-light ng-binding">Только VIP
+                </button>
+                <button ng-hide="archiveMode" ng-click="newStatusFilter()" class="mb-sm btn ng-binding">Нераспределённые
+                    задачи
+                </button>
+                <button ng-click="editFilter()" style="color: #484848"
+                        class="mb-sm btn btn-labeled btn-primary ng-binding">
+                     <span class="btn-label"><i class="fa fa-filter"></i>
+                     </span>Фильтры
+                </button>
+                <div dropdown="" is-open="exportOpen" style="display: inline-block" class="dropdown">
+                    <button id="export-button" type="button" dropdown-toggle="" style="margin-bottom: 5px"
+                            ng-disabled="exportLoading" class="btn btn-primary ng-binding" aria-haspopup="true"
+                            aria-expanded="false">Экспорт
+                    </button>
+                    <ul dropdown-menu="" role="menu" aria-labelledby="export-button" class="dropdown-menu">
+                        <!-- ngRepeat: type in exports -->
+                        <li ng-repeat="type in exports" role="menuitem" class="ng-scope"><a href="#"
+                                                                                            ng-click="exportSearch(type)"
+                                                                                            class="ng-binding">xls</a>
+                        </li><!-- end ngRepeat: type in exports -->
+                        <li ng-repeat="type in exports" role="menuitem" class="ng-scope"><a href="#"
+                                                                                            ng-click="exportSearch(type)"
+                                                                                            class="ng-binding">xml</a>
+                        </li><!-- end ngRepeat: type in exports -->
+                        <li ng-repeat="type in exports" role="menuitem" class="ng-scope"><a href="#"
+                                                                                            ng-click="exportSearch(type)"
+                                                                                            class="ng-binding">csv</a>
+                        </li><!-- end ngRepeat: type in exports -->
+                    </ul>
+                </div>
+
+                <div style="float: right">
+                    <p class="m0">
+                        <small class="mr ng-binding">Автообновление</small>
+                        <label class="switch pull-right">
+                            <input type="checkbox" checked="checked" ng-model="autoreload" ng-change="startInterval()"
+                                   class="ng-pristine ng-untouched ng-valid">
+                            <span></span>
+                        </label>
+                    </p>
+                </div>
+                <br>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label><a class="btn btn-default buttons-collection buttons-colvis" tabindex="0"
+                                  aria-controls="DataTables_Table_0"><span>Скрыть/показать поля</span></a></label>
+                    </div>
+                    <div class="form-group col-md-1">
+                        Показать <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
+                                         class="form-control input-sm">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <label>Поиск:</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input type="text" class="form-control" placeholder="Колонки для поиска">
+                    </div>
+                </div>
+
+
+                <table class="table table-bordered text-center table-sm">
+                    <thead class="bg-info text-white text-center">
+                    <tr>
+                        <th>Статус</th>
+                        <th>Действия</th>
+                        <th>Исполнитель</th>
+                        <th>Рабочее место (подразделения)</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+
+                        <td>
+                            Исполнитель приступил к исполнению
+                        </td>
+                        <td>
+                            <span class="actions">
+                                <button class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Назначить исполнителя">
+                                    <i class="fa fa-wrench"></i>
+                                </button>
+
+                                <button data-toggle="tooltip" data-placement="top" title="Просмотр наряда" class="btn btn-primary btn-xs" onclick="redirect(1)">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                                <button data-toggle="tooltip" data-placement="top" title="Завершить наряд" class="btn btn-primary btn-xs" onclick="redirect(2)">
+                                    <i class="fa fa-check "></i>
+                                </button>
+                                <button data-toggle="tooltip" data-placement="top" title="Комментарии" class="btn btn-primary btn-xs">
+                                    <i class="fa fa-comments"></i>
+                                </button>
+                                <button data-toggle="tooltip" data-placement="top" title="Ход исполнения" class="btn btn-primary btn-xs">
+                                    <i class="fa fa-history"></i>
+                                </button>
+                                <button data-toggle="tooltip" data-placement="top" title="Невозможно назначить на указанную дату" class="btn btn-primary btn-xs">
+                                    <i class="fa fa-minus-circle"></i>
+                                </button>
+                                <button data-toggle="tooltip" data-placement="top" title="Добавить в избранное" class="btn btn-primary btn-xs">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                            </span>
+                        </td>
+                        <td>Ибраимов Е.С.</td>
+                        <td>РДТ "Астанателеком", ЦРСТ, ЦРЛС, АРМ_ОТА (Астана)</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function redirect(id) {
+        switch (id) {
+            case 1:
+                window.location.href = "done.html";
+                break
+            case 2:
+                window.location.href = "close.html";
+                break
+        }
+    }
+</script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
